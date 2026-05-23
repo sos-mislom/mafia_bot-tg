@@ -1,0 +1,11 @@
+services:
+  bot:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./mafia_bot/assets:/app/mafia_bot/assets:ro
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
